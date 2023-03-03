@@ -41,9 +41,8 @@ rs.Open sql, db, 1
                 </h5>
                 <p class="card-text pt-2">가격 : <%=formatcurrency(rs("g_sell_price"))%></p>
                 <p class="card-text">등록일 : <%=rs("g_update_day")%></p>
-                <div class="d-flex justify-content-between mx-5">
+                <div class="m-auto">
                     <a href="game_content.asp?code=<%=rs("g_code")%>" class="btn btn-primary">상세정보</a>
-                    <a href="#" class="btn btn-primary">담기</a>
                 </div>
             </div>
         </div>
