@@ -49,15 +49,15 @@ end if
                     <% end if %>
                     
                     <p class="card-text"><small class="text-muted">등록일 : <%=rs("g_update_day")%></small></p>
-                    <form name="reg_form" method="post" action="./goods_new_ok.asp">
-                        <input type="hidden" name="g_code" value="<%=rs("g_code")%>>
-                        <label for="g_part">주문</label>
-                        <input type="text" class="form-control mb-3" name="g_part" id="g_part" required>
+                    <form name="order_form" method="post" action="game_buy_temp.asp">
+                        <input type="hidden" name="temp_g_code" value="<%=rs("g_code")%>>
+                        <label for="temp_ea">주문</label>
+                        <input type="number" min="1" class="form-control mb-3" name="temp_ea" id="temp_ea" required>
                         <input type="submit" class="btn btn-outline-success" value="주문하기">
                     </form>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </body>
 </html>
