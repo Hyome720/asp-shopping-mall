@@ -11,7 +11,7 @@ db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
 sql = "SELECT g_code, g_part, g_name, g_maker, g_sell_price, g_img,"
 sql = sql & "g_update_day FROM Game_Goods"
-sql = sql & " WHERE g_part = '" & part & "'"
+sql = sql & " WHERE g_part = '" & part & "' ORDER BY g_update_day DESC"
 
 Set rs = Server.CreateObject("ADODB.Recordset")
 
@@ -33,7 +33,7 @@ rs.Open sql, db, 1
     <div class="d-flex flex-wrap justify-content-between">
         <% Do Until rs.EOF %>
         <div class="card mb-3" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="<%=part%>" onerror="this.src='../img/<%=part%>.jpg'">
+            <img src="..." class="card-img-top image-fluid" alt="<%=part%>" onerror="this.src='../img/<%=part%>.jpg'">
             <div class="card-body text-center">
                 <h5 class="card-title"><%=rs("g_name")%>
                 <hr>
@@ -42,7 +42,7 @@ rs.Open sql, db, 1
                 <p class="card-text pt-2">가격 : <%=formatcurrency(rs("g_sell_price"))%></p>
                 <p class="card-text">등록일 : <%=rs("g_update_day")%></p>
                 <div class="d-flex justify-content-between mx-5">
-                    <a href="#" class="btn btn-primary">상세정보</a>
+                    <a href="game_content.asp?code=<%=rs("g_code")%>" class="btn btn-primary">상세정보</a>
                     <a href="#" class="btn btn-primary">담기</a>
                 </div>
             </div>
