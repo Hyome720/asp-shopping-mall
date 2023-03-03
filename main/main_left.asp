@@ -1,3 +1,8 @@
+<%
+response.codepage = 949
+response.charset = "EUC-KR"
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,14 +16,14 @@
     <div>
         <p><a href="../game/game_list.asp">장바구니</a></p>
 
-        <p><a href="../game/game_list.asp">장바구니</a></p>
-        <p><a href="../game/game_list.asp">장바구니</a></p>
-        <p><a href="../game/game_list.asp">장바구니</a></p>
+        <p><a href="game/game_list.asp?part=game">게임</a></p>
+        <p><a href="../game/game_list.asp?part=console">게임기</a></p>
+        <p><a href="../game/game_list.asp?part=movie">영화</a></p>
 
         <% if session("id") <> "admin" then %>
         <p><a href="../admin/admin_login.asp">관리자 로그인</a></p>
         <% else %>
-        <p><a href="../admin/admin_login.asp">관리자 메뉴</a></p>
+        <p><a href="../admin/admin_main.asp">관리자 메뉴</a></p>
         <% end if %>
     </div>
 </body>
