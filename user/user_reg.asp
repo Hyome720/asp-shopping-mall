@@ -23,7 +23,7 @@ response.charset = "EUC-KR"
                 <button type="button" class="btn btn-outline-dark ms-2">중복체크</button>
             </div>
             <label for="c_pwd">비밀번호</label>
-            <input type="text" class="form-control mb-3" name="c_pwd" id="c_pwd" minlength="6" maxlength="15" required>
+            <input type="password" class="form-control mb-3" name="c_pwd" id="c_pwd" minlength="6" maxlength="15" required>
             <label for="c_addr">주소</label>
             <input type="text" class="form-control mb-3" name="c_addr" id="c_addr">
             <label for="c_tel">전화번호</label>
