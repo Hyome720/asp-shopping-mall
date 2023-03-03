@@ -9,9 +9,14 @@ part = Request("part")
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
-sql = "SELECT g_code, g_part, g_name, g_maker, g_sell_price, g_img,"
-sql = sql & "g_update_day FROM Game_Goods"
-sql = sql & " WHERE g_part = '" & part & "' ORDER BY g_update_day DESC"
+if part <> "" then
+    sql = "SELECT g_code, g_part, g_name, g_maker, g_sell_price, g_img,"
+    sql = sql & "g_update_day FROM Game_Goods"
+    sql = sql & " WHERE g_part = '" & part & "' ORDER BY g_update_day DESC"
+else
+    sql = "SELECT g_code, g_part, g_name, g_maker, g_sell_price, g_img,"
+    sql = sql & "g_update_day FROM Game_Goods ORDER BY g_update_day DESC" 
+end if
 
 Set rs = Server.CreateObject("ADODB.Recordset")
 
@@ -33,7 +38,7 @@ rs.Open sql, db, 1
     <div class="d-flex flex-wrap justify-content-between">
         <% Do Until rs.EOF %>
         <div class="card mb-3" style="width: 18rem;">
-            <img src="..." class="card-img-top image-fluid" alt="<%=part%>" onerror="this.src='../img/<%=part%>.jpg'">
+            <img src="..." class="card-img-top image-fluid" alt="이미지가 없습니다" onerror="this.src='../img/<%=rs("g_part")%>.jpg'">
             <div class="card-body text-center">
                 <h5 class="card-title"><%=rs("g_name")%>
                 <hr>
