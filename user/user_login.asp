@@ -23,7 +23,10 @@ response.charset = "EUC-KR"
             </div>
             <label for="c_pwd">비밀번호</label>
             <input type="password" class="form-control mb-3" name="c_pwd" id="c_pwd" minlength="6" maxlength="15" required>
-            <input type="submit" class="btn btn-outline-success" value="회원가입">
+            <input type="submit" class="btn btn-outline-success" value="로그인">
+            <hr>
+            <p>아이디가 없으신가요?</p>
+            <button type="button" onclick="location.href='./user_reg.asp'" class="btn btn-outline-secondary">회원가입</button>
         </form>
     </div>
 </body>

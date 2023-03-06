@@ -6,17 +6,21 @@ response.charset = "EUC-KR"
 <%
 c_name = Request("c_name")
 c_pwd = Request("c_pwd")
-c_addr = Request("c_addr")
-c_tel = Request("c_tel")
 
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
-sql = "INSERT INTO Game_Customer (c_name, c_pwd, c_tel, c_addr) VALUES ("
-sql = sql & "'" & c_name & "'"
-sql = sql & ",'" & c_pwd & "'"
-sql = sql & ",'" & c_tel & "'"
-sql = sql & ",'" & c_addr & "')"
+sql = "SELECT c_code FROM Game_Customer WHERE" 
+sql = sql & " c_name = '" & c_name & "'"
+sql = sql & " AND c_pwd = '" & c_pwd & "'"
 
-db.Execute(sql)
+Set rs = db.Execute(sql) 
+
+if rs.EOF or rs.BOF then
+    Response.Write("<script>alert('아이디 또는 비밀번호가 틀렸습니다');history.back();</script>")
+else
+    Session("id") = rs("c_code")
+    Response.Write("<script>alert('로그인 되었습니다.');</script>")
+    Response.Redirect("../game/game_list.asp")
+end if
 %>
