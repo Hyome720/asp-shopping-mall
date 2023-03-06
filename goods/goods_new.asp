@@ -19,8 +19,15 @@ response.charset = "EUC-KR"
         <form name="reg_form" method="post" action="./goods_new_ok.asp">
             <label for="g_code">상품코드</label>
             <input type="text" class="form-control mb-3" name="g_code" id="g_code" required>
-            <label for="g_part">제품구분</label>
-            <input type="text" class="form-control mb-3" name="g_part" id="g_part" required>
+            <label for="g_code">제품구분</label>
+            <br>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>제품 구분을 선택하세요.</option>
+                <option value="game">게임</option>
+                <option value="console">게임기</option>
+                <option value="movie">영화</option>
+            </select>
+            <br>
             <label for="g_name">제품명</label>
             <input type="text" class="form-control mb-3" name="g_name" id="g_name" required>
             <label for="g_maker">제조회사</label>

@@ -40,7 +40,8 @@ c_tel = rs("c_tel")
             <label for="c_tel">전화번호</label>
             <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_tel" id="c_tel" required>
             <label for="bank_acc">입금계좌</label>
-            <select name="bank_acc" size="1">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>입금 하실 계좌를 선택하세요.</option>
                 <option value="국민은행">국민은행 : 020303-23-94951</option>
                 <option value="우리은행">우리은행 : 68543-2345-345435</option>
             </select>

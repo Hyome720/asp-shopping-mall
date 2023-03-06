@@ -12,7 +12,7 @@ response.charset = "EUC-KR"
     <title>Document</title>
 </head>
 <body>
-    <p><a href="">상품등록</a></p>
+    <p><a href="../goods/goods_new.asp">상품등록</a></p>
     <p><a href="./admin_list.asp">구매 리스트 보기</a></p>
 </body>
 </html>
