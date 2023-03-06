@@ -4,8 +4,6 @@ response.charset = "EUC-KR"
 %>
 
 <%
-part = Request("part")
-
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
