@@ -79,7 +79,7 @@ end if
             <label for="c_pwd">비밀번호</label>
             <input type="password" value="<%=c_pwd%>" class="form-control mb-3" name="c_pwd" id="c_pwd" minlength="6" maxlength="15" required>
             <label for="c_addr">주소</label>
-            <input type="text" value="<%=c_addr%>" class="form-control mb-3" name="c_addr" id="c_addr">
+            <input type="text" value="<%=c_addr%>" class="form-control mb-3" name="c_addr" id="c_addr" required>
             <label for="c_tel">전화번호</label>
             <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_tel" id="c_tel" required>
             <input type="submit" id="id_submit" class="btn btn-outline-success" value="회원가입" disabled>

@@ -7,12 +7,6 @@ c_tel = Request("c_tel")
 bank_acc = Request("bank_acc")
 order_time = now()
 
-Response.Write total_price
-Response.Write c_name
-Response.Write c_addr
-Response.Write c_tel
-Response.Write bank_acc
-
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB; UID=sa; PWD=1234;")
 

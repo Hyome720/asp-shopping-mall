@@ -38,7 +38,7 @@ c_tel = rs("c_tel")
             <label for="c_addr">배달처</label>
             <input type="text" value="<%=c_addr%>" class="form-control mb-3" name="c_addr" id="c_addr" required>
             <label for="c_tel">전화번호</label>
-            <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_tel" id="c_tel">
+            <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_tel" id="c_tel" required>
             <label for="bank_acc">입금계좌</label>
             <select name="bank_acc" size="1">
                 <option value="국민은행">국민은행 : 020303-23-94951</option>
