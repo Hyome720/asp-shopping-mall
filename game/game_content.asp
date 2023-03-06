@@ -40,8 +40,8 @@ end if
                     <h5 class="card-title"><%=rs("g_name")%>
                     <hr>
                     제조사 : <%=rs("g_maker")%></h5>
-                    <p class="red card-text mt-3 text-decoration-line-through">기존가 : <%=formatcurrency(rs("g_ori_price"))%></p>
-                    <p class="card-text">판매가 : <%=formatcurrency(rs("g_sell_price"))%></p>
+                    <p class="red card-text mt-3 text-decoration-line-through">기존가 : <%=formatcurrency(rs("g_sell_price"))%></p>
+                    <p class="card-text">판매가 : <%=formatcurrency(rs("g_ori_price"))%></p>
                     <% if isNull(g_content) or isEmpty(g_content) then %>
                     <p class="card-text">상세 정보가 없습니다.</p>
                     <% else %>
