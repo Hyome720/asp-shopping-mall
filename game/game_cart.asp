@@ -18,8 +18,6 @@ sql = sql & " AND A.temp_g_code = B.g_code"
 Set rs = Server.CreateObject("ADODB.Recordset")
 rs.Open sql, db
 
-Response.Write rs("g_code")
-
 %>
 
 <!DOCTYPE html>
@@ -31,6 +29,20 @@ Response.Write rs("g_code")
     <title><%=session.SessionID%>님의 장바구니</title>
 </head>
 <body>
+    <script>
+        function cart_update() {
+            document.order_form.action = "game_update.asp"
+            document.order_form.submit()
+        }
+        function cart_reset() {
+            document.order_form.action = "game_reset.asp"
+            document.order_form.submit()
+        }
+        function cart_order() {
+            document.order_form.action = "game_order.asp"
+            document.order_form.submit()
+        }
+    </script>
     <% if rs.EOF then %>
     <p>장바구니에 아무것도 없어요..</p>
     <% else %>
@@ -41,7 +53,7 @@ Response.Write rs("g_code")
                 <th>제품명</th>
                 <th>수량</th>
                 <th>가격</th>
-                <th>취소</th>
+                <th>비우기</th>
             </tr>
             <% Do Until rs.EOF %>
             <tr>
@@ -67,9 +79,18 @@ Response.Write rs("g_code")
             loop
             %>
             <tr>
-                <td class="text-end">
-                    <%=total_price%>
                 <td>
+                </td>
+                <td>
+                <button type="button" class="btn btn-warning" onclick="cart_update()">업데이트</button>
+                <button type="button" class="btn btn-secondary">초기화</button>
+                <button type="button" class="btn btn-primary" onclick="cart_order()">주문하기</button>
+                </td>
+                <td>
+                    합계 : <%=formatcurrency(total_price)%>
+                <td>
+                <td>
+                </td>
             </tr>
             <% end if %>
         </table>
