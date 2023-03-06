@@ -9,6 +9,10 @@ c_pwd = Request("c_pwd")
 c_addr = Request("c_addr")
 c_tel = Request("c_tel")
 
+if isNull(c_addr) then
+c_addr = "주소 없음"
+end if
+
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
@@ -19,4 +23,8 @@ sql = sql & ",'" & c_tel & "'"
 sql = sql & ",'" & c_addr & "')"
 
 db.Execute(sql)
+
+session.
+
+Response.Redirect("../game/game_list.asp")
 %>
