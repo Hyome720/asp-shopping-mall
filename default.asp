@@ -32,14 +32,17 @@ response.charset = "EUC-KR"
             });
         }
     </script>
-    <div class="d-flex justify-content-end">
-        <% if Session("id") = "" then %>
-        <button type="button" class="btn btn-secondary me-3" onclick="changeFrameSrc('user/user_reg.asp')">회원가입</button>
-        <button type="button" class="btn btn-secondary" onclick="changeFrameSrc('user/user_login.asp')">로그인</button>
-        <% else %>
-        <button type="button" class="btn btn-danger" onclick="logout()">로그아웃</button>
-        <% end if %>
-    </div>
+    <% if Session("id") = "" then %>
+        <div class="d-flex justify-content-end">
+            <button type="button" class="btn btn-secondary me-3" onclick="changeFrameSrc('user/user_reg.asp')">회원가입</button>
+            <button type="button" class="btn btn-secondary" onclick="changeFrameSrc('user/user_login.asp')">로그인</button>
+        </div>
+    <% else %>
+        <div class="d-flex justify-space-between">
+            <%=Session("name")%> 님 안녕하세요!
+            <button type="button" class="btn btn-danger" onclick="logout()">로그아웃</button>
+        </div>
+    <% end if %>
     <container class="d-flex mt-4 m-auto h-100">
         <div>
             <p><a href="#" onclick="changeFrameSrc('game/game_list.asp')">전체보기</a></p>
