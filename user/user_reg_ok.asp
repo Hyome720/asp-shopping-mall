@@ -31,5 +31,5 @@ rs.Open sql_session, db
 rs.Close()
 db.Close()
 
-Response.Redirect("../game/game_list.asp")
+Response.Redirect("../game/game_list.asp?msg=success")
 %>

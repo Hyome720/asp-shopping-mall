@@ -32,6 +32,16 @@ rs.Open sql, db, 1
     <title><%=part%> 둘러보기</title>
 </head>
 <body>
+    <%
+    msg = Request("msg")
+    if msg = "success" then
+    %>
+    <script>
+    alert("회원가입이 완료되었습니다.");
+    </script>
+    <%
+    end if
+    %>
     <% if rs.EOF then %>
     <p>데이터가 없습니다 ㅠㅠ</p>
     <% else %>

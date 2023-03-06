@@ -22,6 +22,6 @@ else
     Session("id") = rs("c_code")
     Session("name") = rs("c_name")
     Response.Write("<script>alert('로그인 되었습니다.');</script>")
-    Response.Redirect("../game/game_list.asp")
+    Response.Write("<script>parent.location.reload();</script>")
 end if
 %>
