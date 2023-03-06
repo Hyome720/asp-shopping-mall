@@ -4,6 +4,11 @@ response.charset = "EUC-KR"
 %>
 
 <%
+if Session("id") = "" then
+Response.Write("<script>alert('로그인해주세요!');</script>")
+Response.Write("<script>parent.location.reload();</script>")
+end if
+
 Response.Expires = 0
 
 Set db = Server.CreateObject("ADODB.Connection")
