@@ -9,7 +9,6 @@ Response.Expires = 0
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
-Response.Write Session("id")
 
 sql = "SELECT temp_ea, temp_c_code, temp_g_code, g_name, g_code, g_sell_price FROM Game_Temp_Buy A, Game_Goods B"
 sql = sql & " WHERE A.temp_c_code = '" & Session("id") & "'"

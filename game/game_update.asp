@@ -1,6 +1,5 @@
 <%
 num = Request("g_code").count
-Response.Write num
 
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB; UID=sa; PWD=1234;")
