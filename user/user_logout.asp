@@ -1,0 +1,4 @@
+<%
+Session("code") = ""
+Session("id") = ""
+%>
