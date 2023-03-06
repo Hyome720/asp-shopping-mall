@@ -52,7 +52,11 @@ response.charset = "EUC-KR"
 
             <p><a href="#" onclick="changeFrameSrc('game/game_cart.asp')">장바구니</a></p>
 
-
+            <% if session("id") <> "admin" then %>
+            <p><a href="#" onclick="changeFrameSrc('admin/admin_login.asp')">관리자 로그인</a></p>
+            <% else %>
+            <p><a href="#" onclick="changeFrameSrc('admin/admin_main.asp')">관리자 메뉴</a></p>
+            <% end if %>
         </div>
         <iframe id="my_frame" src="game/main_right.asp" class="ms-5" style="width: 90%;">
             
