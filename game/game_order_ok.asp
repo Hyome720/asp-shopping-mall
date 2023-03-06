@@ -1,11 +1,17 @@
-<!--#include file="../pkval.asp" //-->
+<!--#include file="pkval.asp" -->
 <%
-total_price = Reqeust("total_price")
-c_name = Reqeust("c_name")
-c_addr = Reqeust("c_addr")
-c_tel = Reqeust("c_tel")
-bank_acc = Reqeust("bank_acc")
+total_price = Request("total_price")
+c_name = Request("c_name")
+c_addr = Request("c_addr")
+c_tel = Request("c_tel")
+bank_acc = Request("bank_acc")
 order_time = now()
+
+Response.Write total_price
+Response.Write c_name
+Response.Write c_addr
+Response.Write c_tel
+Response.Write bank_acc
 
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB; UID=sa; PWD=1234;")
@@ -36,11 +42,11 @@ sql = sql & ",'" & primaryval & Session("id") & "'"
 sql = sql & ",'" & order_time & "'"
 sql = sql & ",'" & summary & "'"
 sql = sql & "," & total_price
-sql = sql & ",'" & Session("id") & "'"
-sql = sql & ",'" & bank & "')"
+sql = sql & ",'" & bank_acc & "'"
+sql = sql & ",'" & Session("id") & "')"
 db.Execute(sql)
 
-sql = "DELTE FROM Game_Temp_Buy WHERE temp_c_code = '" & Session("id") & "'"
+sql = "DELETE FROM Game_Temp_Buy WHERE temp_c_code = '" & Session("id") & "'"
 db.Execute(sql)
 
 Response.Redirect "game_result.asp"

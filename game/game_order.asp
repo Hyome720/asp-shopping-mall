@@ -36,9 +36,9 @@ c_tel = rs("c_tel")
             <label for="c_name">이름</label>
             <input type="text" value="<%=c_name%>" class="form-control mb-3" name="c_name" minlength="2" maxlength="10" required>
             <label for="c_addr">배달처</label>
-            <input type="password" value="<%=c_addr%>" class="form-control mb-3" name="c_pwd" id="c_pwd" minlength="6" maxlength="15" required>
+            <input type="text" value="<%=c_addr%>" class="form-control mb-3" name="c_addr" id="c_addr" required>
             <label for="c_tel">전화번호</label>
-            <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_addr" id="c_addr">
+            <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_tel" id="c_tel">
             <label for="bank_acc">입금계좌</label>
             <select name="bank_acc" size="1">
                 <option value="국민은행">국민은행 : 020303-23-94951</option>
@@ -46,9 +46,10 @@ c_tel = rs("c_tel")
             </select>
             <p>
             결제액 : <%=formatcurrency(Request("total_price"))%>
+            <input type="hidden" name="total_price" value="<%=Request("total_price")%>"
             </p>
             <hr>
-            <input type="submit" id="id_submit" class="btn btn-outline-success" value="주문하기" disabled>
+            <input type="submit" id="id_submit" class="btn btn-outline-success" value="주문하기">
         </form>
         <div id="result"></div>
     </div>
