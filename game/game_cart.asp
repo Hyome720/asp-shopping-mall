@@ -87,6 +87,7 @@ rs.Open sql, db
                 </td>
                 <td>
                     гу╟Х : <%=formatcurrency(total_price)%>
+                    <input type="hidden" name="total_price" value="<%=total_price%>">
                 <td>
                 <td>
                 </td>
