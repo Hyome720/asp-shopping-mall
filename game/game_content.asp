@@ -60,7 +60,7 @@ end if
                         <input type="hidden" name="temp_g_code" value="<%=g_code%>">
                         <label for="temp_ea">주문</label>
                         <input type="number" min="1" class="form-control mb-3" name="temp_ea" id="temp_ea" required>
-                        <input type="submit" class="btn btn-outline-success" value="주문하기">
+                        <input type="submit" class="btn btn-outline-success" value="장바구니에 담기">
                     </form>
                 </div>
             </div>
