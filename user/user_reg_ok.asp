@@ -24,7 +24,15 @@ sql = sql & ",'" & c_addr & "')"
 
 db.Execute(sql)
 
-session.
+sql_session = "SELECT c_code, c_name FROM Game_Customer WHERE c_name = '" & c_name & "'"
+Set rs = Server.CreateObject("ADODB.Recordset")
+rs.Open sql_session, db
+
+session("code") = rs("c_code")
+session("id") = rs("c_name")
+
+rs.Close()
+db.Close()
 
 Response.Redirect("../game/game_list.asp")
 %>

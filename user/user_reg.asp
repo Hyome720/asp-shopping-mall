@@ -4,6 +4,10 @@ response.charset = "EUC-KR"
 %>
 
 <%
+if session("id") <> "" then
+Response.Redirect("../game/game_list.asp")
+end if
+
 Dim c_name, c_pwd, c_addr, c_tel
 
 c_name = Request.Form("c_name")
