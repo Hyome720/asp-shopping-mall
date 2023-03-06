@@ -44,6 +44,9 @@ c_tel = rs("c_tel")
                 <option value="국민은행">국민은행 : 020303-23-94951</option>
                 <option value="우리은행">우리은행 : 68543-2345-345435</option>
             </select>
+            <p>
+            결제액 : <%=formatcurrency(Request("total_price"))%>
+            </p>
             <hr>
             <input type="submit" id="id_submit" class="btn btn-outline-success" value="주문하기" disabled>
         </form>
