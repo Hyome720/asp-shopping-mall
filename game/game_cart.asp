@@ -83,7 +83,7 @@ rs.Open sql, db
                 </td>
                 <td>
                 <button type="button" class="btn btn-warning" onclick="cart_update()">업데이트</button>
-                <button type="button" class="btn btn-secondary">초기화</button>
+                <button type="button" class="btn btn-secondary" onclick="cart_reset()">장바구니 비우기</button>
                 <button type="button" class="btn btn-primary" onclick="cart_order()">주문하기</button>
                 </td>
                 <td>
