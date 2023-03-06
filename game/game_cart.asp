@@ -18,6 +18,8 @@ sql = sql & " AND A.temp_g_code = B.g_code"
 Set rs = Server.CreateObject("ADODB.Recordset")
 rs.Open sql, db
 
+Response.Write rs("g_code")
+
 %>
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ rs.Open sql, db
                     <%=formatcurrency(rs("g_sell_price") * rs("temp_ea"))%>
                 </td>
                 <td>
-                    <a href="game_del.asp?code=<%rs("g_code")%>">X</a>
+                    <a href="game_del.asp?code=<%=rs("g_code")%>">X</a>
                 </td>
             </tr>
 
