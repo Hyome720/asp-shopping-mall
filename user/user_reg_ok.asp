@@ -28,8 +28,7 @@ sql_session = "SELECT c_code, c_name FROM Game_Customer WHERE c_name = '" & c_na
 Set rs = Server.CreateObject("ADODB.Recordset")
 rs.Open sql_session, db
 
-Session("code") = rs("c_code")
-Session("id") = rs("c_name")
+Session("id") = rs("c_code")
 
 rs.Close()
 db.Close()

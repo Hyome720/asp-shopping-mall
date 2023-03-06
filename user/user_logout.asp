@@ -1,4 +1,4 @@
 <%
-Session("code") = ""
+Session("id") = ""
 Session("id") = ""
 %>

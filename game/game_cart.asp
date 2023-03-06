@@ -9,12 +9,14 @@ Response.Expires = 0
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
-sql = "SELECT temp_ea, g_code, g_name, g_sell_price FROM Game_Temp_Buy A, Game_Goods B"
-sql = sql & " WHERE A.temp_c_code = '" & session.SessionID & "'"
+Response.Write Session("id")
+
+sql = "SELECT temp_ea, temp_c_code, temp_g_code, g_name, g_code, g_sell_price FROM Game_Temp_Buy A, Game_Goods B"
+sql = sql & " WHERE A.temp_c_code = '" & Session("id") & "'"
 sql = sql & " AND A.temp_g_code = B.g_code"
 
 Set rs = Server.CreateObject("ADODB.Recordset")
-rs.Open sql, db, 1
+rs.Open sql, db
 
 %>
 
