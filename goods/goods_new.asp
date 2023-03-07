@@ -16,12 +16,10 @@ response.charset = "EUC-KR"
 <body>
     <div style="width: 80%; align-items: center;">
         <h2>새 상품 등록하기</h2>
-        <form name="reg_form" method="post" action="./goods_new_ok.asp">
-            <label for="g_code">상품코드</label>
-            <input type="text" class="form-control mb-3" name="g_code" id="g_code" required>
+        <form name="reg_form" method="post" action="./goods_new_ok.asp" ENCTYPE="multipart/form-data">
             <label for="g_code">제품구분</label>
             <br>
-            <select class="form-select" aria-label="Default select example">
+            <select name="g_part" class="form-select" aria-label="Default select example">
                 <option selected>제품 구분을 선택하세요.</option>
                 <option value="game">게임</option>
                 <option value="console">게임기</option>
@@ -33,7 +31,7 @@ response.charset = "EUC-KR"
             <label for="g_maker">제조회사</label>
             <input type="text" class="form-control mb-3" name="g_maker" id="g_maker" required>
             <label for="g_image">이미지</label>
-            <input type="text" class="form-control mb-3" name="g_image" id="g_image" required>
+            <input type="file" class="form-control mb-3" name="g_image" id="g_image">
             <label for="g_ori_price">정가</label>
             <input type="text" class="form-control mb-3" name="g_ori_price" id="g_ori_price" required>
             <label for="g_sell_price">판매가</label>

@@ -1,12 +1,19 @@
 <%
-g_code = Request("g_code")
-g_part = Request("g_part")
-g_name = Request("g_name")
-g_maker = Request("g_maker")
-g_image = Request("g_image")
-g_ori_price = Request("g_ori_price")
-g_sell_price = Request("g_sell_price")
-g_content = Request("g_content")
+response.codepage = 949
+response.charset = "EUC-KR"
+%>
+
+<%
+
+Set uploadform = Server.CreateObject("DEXT.FileUpload")
+uploadform.DefaultPath = "C:\inetpub\wwwroot\asp_mall\img"
+g_part = uploadform("g_part")
+g_name = uploadform("g_name")
+g_maker = uploadform("g_maker")
+g_image = uploadform.FileName
+g_ori_price = uploadform("g_ori_price")
+g_sell_price = uploadform("g_sell_price")
+g_content = uploadform("g_content")
 
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
