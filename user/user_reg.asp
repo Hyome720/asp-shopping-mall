@@ -46,7 +46,7 @@ end if
             // Handle form submission using AJAX
             $('button[name="check_dup"]').click(function(e) {
                 e.preventDefault(); // Prevent page refresh
-                var c_name = $('#c_name').val();
+                const c_name = $('#c_name').val();
                 $.ajax({
                     type: 'POST',
                     url: './check_dup.asp',
