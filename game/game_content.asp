@@ -33,7 +33,7 @@ end if
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="..." class="card-img-top" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
+                <img style="width: 530px; object-fit: cover;" src="../img/<%=rs("g_img")%>" class="card-img-top" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
