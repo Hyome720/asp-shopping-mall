@@ -7,6 +7,7 @@ response.charset = "EUC-KR"
 
 Set uploadform = Server.CreateObject("DEXT.FileUpload")
 uploadform.DefaultPath = "C:\inetpub\wwwroot\asp_mall\img"
+g_code = uploadform("g_code")
 g_part = uploadform("g_part")
 g_name = uploadform("g_name")
 g_maker = uploadform("g_maker")

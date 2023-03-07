@@ -3,6 +3,14 @@ response.codepage = 949
 response.charset = "EUC-KR"
 %>
 
+<%
+Randomize
+num1 = Cint(Rnd * 10000)
+Randomize
+num2 = Cint(Rnd * 10000)
+code_num = num1 & "-" & num2
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,6 +25,7 @@ response.charset = "EUC-KR"
     <div style="width: 80%; align-items: center;">
         <h2>새 상품 등록하기</h2>
         <form name="reg_form" method="post" action="./goods_new_ok.asp" ENCTYPE="multipart/form-data">
+            <input type="hidden" name="g_code" id="g_code" value="<%=code_num%>">
             <label for="g_code">제품구분</label>
             <br>
             <select name="g_part" class="form-select" aria-label="Default select example">
