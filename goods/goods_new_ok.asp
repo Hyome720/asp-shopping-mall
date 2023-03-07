@@ -15,6 +15,8 @@ g_ori_price = uploadform("g_ori_price")
 g_sell_price = uploadform("g_sell_price")
 g_content = uploadform("g_content")
 
+uploadform.Save
+
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
