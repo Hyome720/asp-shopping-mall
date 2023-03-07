@@ -33,11 +33,16 @@ end if
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="..." class="card-img-top" alt="<%=rs("g_part")%>" onerror="this.src='../img/<%=rs("g_part")%>.jpg'">
+                <img src="..." class="card-img-top" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title"><%=rs("g_name")%>
+                    <div class="d-flex justify-content-between">
+                        <h5 class="card-title"><%=rs("g_name")%></h5>
+                        <% if Session("id") = "admin" then %>
+                        <button type="button" class="btn btn-outline-danger" onclick="location.href = 'game_content_del.asp?code=<%=g_code%>'">삭제하기</button>
+                        <% end if %>
+                    </div>
                     <hr>
                     제조사 : <%=rs("g_maker")%></h5>
                     <p class="red card-text mt-3 text-decoration-line-through">기존가 : <%=formatcurrency(rs("g_sell_price"))%></p>

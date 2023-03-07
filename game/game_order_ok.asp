@@ -28,7 +28,7 @@ Do Until rs.EOF
     rs.MoveNext
 loop
 
-rs.Close
+rs.Close()
 
 sql = "INSERT INTO Game_Buy (b_code, c_code, b_date, b_summary, b_total_price, b_bank, c_code_ori) VALUES"
 sql = sql & " ('" & primaryval & Session("id") & "'"
