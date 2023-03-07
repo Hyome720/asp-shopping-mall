@@ -6,7 +6,7 @@ response.charset = "EUC-KR"
 <%
 if Session("id") = "" then
 Response.Write("<script>alert('로그인해주세요!');</script>")
-Response.Write("<script>parent.location.reload();</script>")
+Response.Write("<script>location.href = '../user/user_login.asp';</script>")
 end if
 
 Response.Expires = 0
