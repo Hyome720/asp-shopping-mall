@@ -13,10 +13,10 @@ sql = "SELECT * FROM Game_Goods WHERE g_code = '" & g_code & "'"
 
 Set rs = db.Execute(sql)
 
-if isEmpty(rs("g_content")) or isNull(rs("g_content")) then
-g_content = Null
+g_content = rs("g_content")
+if g_content <> "" then
 else
-g_content = replace(rs("g_content"), chr(13), "<br>")
+g_content = "등록된 정보가 없습니다."
 end if
 
 %>
@@ -32,8 +32,8 @@ end if
 <body>
     <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-4">
-                <img style="width: 530px; object-fit: cover;" src="../img/<%=rs("g_img")%>" class="card-img-top" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
+            <div class="col-md-4 position-relative">
+                <img style="width: 530px; object-fit: cover;" src="../img/<%=rs("g_img")%>" class="card-img-top position-absolute top-50 start-50 translate-middle" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
@@ -47,11 +47,7 @@ end if
                     제조사 : <%=rs("g_maker")%></h5>
                     <p class="red card-text mt-3 text-decoration-line-through">기존가 : <%=formatcurrency(rs("g_sell_price"))%></p>
                     <p class="card-text">판매가 : <%=formatcurrency(rs("g_ori_price"))%></p>
-                    <% if isNull(g_content) or isEmpty(g_content) then %>
-                    <p class="card-text">상세 정보가 없습니다.</p>
-                    <% else %>
-                    <p class="card-text"><%=g_content%></p>
-                    <% end if %>
+                    <p class="card-text">상세정보 : <%=g_content%></p>
                     
                     <p class="card-text"><small class="text-muted">등록일 : <%=rs("g_update_day")%></small></p>
                     <form name="order_form" method="post" action="game_buy_temp.asp">
