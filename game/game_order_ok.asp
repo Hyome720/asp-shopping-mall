@@ -2,7 +2,11 @@
 <%
 total_price = Request("total_price")
 c_name = Request("c_name")
-c_addr = Request("c_addr")
+c_postcode = Request("c_postcode")
+c_address = Request("c_address")
+c_detailAddress = Request("c_detailAddress")
+c_extraAddress = Request("c_extraAddress")
+c_addr = c_address & c_extraAddress & " " & c_detailAddress
 c_tel = Request("c_tel")
 bank_acc = Request("bank_acc")
 order_time = now()
