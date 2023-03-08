@@ -6,16 +6,21 @@ response.charset = "EUC-KR"
 <%
 c_name = Request("c_name")
 c_pwd = Request("c_pwd")
-c_addr = Request("c_addr")
+c_postcode = Request("c_postcode")
+c_address = Request("c_address")
+c_detailAddress = Request("c_detailAddress")
+c_extraAddress = Request("c_extraAddress")
+c_addr = c_address & c_extraAddress & " " & c_detailAddress
 c_tel = Request("c_tel")
 
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
-sql = "INSERT INTO Game_Customer (c_name, c_pwd, c_tel, c_addr) VALUES ("
+sql = "INSERT INTO Game_Customer (c_name, c_pwd, c_tel, c_postcode, c_addr) VALUES ("
 sql = sql & "'" & c_name & "'"
 sql = sql & ",'" & c_pwd & "'"
 sql = sql & ",'" & c_tel & "'"
+sql = sql & "," & c_postcode
 sql = sql & ",'" & c_addr & "')"
 
 db.Execute(sql)
