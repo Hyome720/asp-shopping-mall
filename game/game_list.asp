@@ -48,7 +48,7 @@ rs.Open sql, db, 1
     <div class="d-flex flex-wrap justify-content-between">
         <% Do Until rs.EOF %>
         <div class="card mb-3" style="width: 18rem;">
-            <img style="width: 286px; object-fit: cover;" src="../img/<%=rs("g_img")%>" class="card-img-top image-fluid" alt="이미지가 없습니다" onerror="this.src='../img/<%=rs("g_part")%>.jpg'">
+            <img src="../img/<%=rs("g_img")%>" class="card-img-top image-fluid w-100" alt="이미지가 없습니다" onerror="this.src='../img/<%=rs("g_part")%>.jpg'">
             <div class="card-body text-center">
                 <h5 class="card-title"><%=rs("g_name")%>
                 <hr>
