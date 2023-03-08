@@ -16,12 +16,15 @@ c_tel = Request("c_tel")
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB;UID=sa;PWD=1234;")
 
-sql = "INSERT INTO Game_Customer (c_name, c_pwd, c_tel, c_postcode, c_addr) VALUES ("
+sql = "INSERT INTO Game_Customer (c_name, c_pwd, c_tel, c_postcode, c_addr, c_address, c_detailAddress, c_extraAddress) VALUES ("
 sql = sql & "'" & c_name & "'"
 sql = sql & ",'" & c_pwd & "'"
 sql = sql & ",'" & c_tel & "'"
 sql = sql & "," & c_postcode
-sql = sql & ",'" & c_addr & "')"
+sql = sql & ",'" & c_addr & "'"
+sql = sql & ",'" & c_address & "'"
+sql = sql & ",'" & c_detailAddress & "'"
+sql = sql & ",'" & c_extraAddress & "')"
 
 db.Execute(sql)
 

@@ -115,7 +115,7 @@ end if
                     document.getElementById("c_address").value = addr;
                     // 커서를 상세주소 필드로 이동한다.
                     document.getElementById("c_detailAddress").focus();
-                }
+                } 
             }).open();
         }
     </script>
