@@ -40,7 +40,7 @@ code_num = num1 & "-" & num2
             <label for="g_maker">제조회사</label>
             <input type="text" class="form-control mb-3" name="g_maker" id="g_maker" required>
             <label for="g_image">이미지</label>
-            <input type="file" class="form-control mb-3" name="g_image" id="g_image" accept="image/*">>
+            <input type="file" class="form-control mb-3" name="g_image" id="g_image" accept="image/*">
             <label for="g_ori_price">정가</label>
             <input type="text" class="form-control mb-3" name="g_ori_price" id="g_ori_price" required>
             <label for="g_sell_price">판매가</label>

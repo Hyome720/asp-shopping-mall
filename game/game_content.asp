@@ -32,10 +32,10 @@ end if
 <body>
     <div class="card mb-3">
         <div class="row g-0">
-            <div class="col-md-4 position-relative">
-                <img style="width: 530px; object-fit: cover;" src="../img/<%=rs("g_img")%>" class="card-img-top position-absolute top-50 start-50 translate-middle" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
+            <div class="col-md-4 position-relative w-50">
+                <img src="../img/<%=rs("g_img")%>" class="card-img-top position-absolute top-50 start-50 translate-middle w-75" alt="<%=rs("g_part")%>" onerror='this.src="../img/<%=rs("g_part")%>.jpg"'>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8 w-50">
                 <div class="card-body">
                     <div class="d-flex justify-content-between">
                         <h5 class="card-title"><%=rs("g_name")%></h5>
