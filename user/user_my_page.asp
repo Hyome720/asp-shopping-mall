@@ -4,6 +4,10 @@ response.charset = "EUC-KR"
 %>
 
 <% 
+if Session("id") = "admin" then
+Response.Write("<script>alert('관리자는 수정할게 없습니다');history.back();</script>")
+end if
+
 Set db = Server.CreateObject("ADODB.Connection")
 db.Open("DSN=ShopDB; UID=sa; PWD=1234;")
 
