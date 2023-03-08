@@ -52,6 +52,7 @@ c_tel = rs("c_tel")
             <label for="c_tel" class="mb-3">전화번호</label>
             <input type="text" value="<%=c_tel%>" class="form-control mb-3" name="c_tel" id="c_tel" required>
             <input type="submit" id="id_submit" class="btn btn-outline-success" value="정보수정">
+            <button type="button" class="btn btn-outline-warning" onclick="location.href = './user_pwd_change.asp'">비밀번호 변경하기</button>
         </form>
     </div>
 </body>
