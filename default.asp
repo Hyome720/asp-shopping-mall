@@ -40,22 +40,25 @@ response.charset = "EUC-KR"
     <% else %>
         <div class="d-flex justify-content-between">
             <p><%=Session("name")%> 님 안녕하세요!</p>
+            <div>
+            <button type="button" class="btn btn-primary" onclick="changeFrameSrc('user/user_my_page.asp')">마이페이지</button>
             <button type="button" class="btn btn-danger" onclick="logout()">로그아웃</button>
+            </div>
         </div>
     <% end if %>
     <container class="d-flex mt-4 m-auto h-100">
         <div>
-            <p><a href="#" onclick="changeFrameSrc('game/game_list.asp')">전체보기</a></p>
-            <p><a href="#" onclick="changeFrameSrc('game/game_list.asp?part=game')">게임</a></p>
-            <p><a href="#" onclick="changeFrameSrc('game/game_list.asp?part=console')">게임기</a></p>
-            <p><a href="#" onclick="changeFrameSrc('game/game_list.asp?part=movie')">영화</a></p>
+            <p><a href="#" class="text-reset text-decoration-none fw-bold" onclick="changeFrameSrc('game/game_list.asp')">전체보기</a></p>
+            <p><a href="#" class="text-reset text-decoration-none" onclick="changeFrameSrc('game/game_list.asp?part=game')">게임</a></p>
+            <p><a href="#" class="text-reset text-decoration-none" onclick="changeFrameSrc('game/game_list.asp?part=console')">게임기</a></p>
+            <p><a href="#" class="text-reset text-decoration-none" onclick="changeFrameSrc('game/game_list.asp?part=movie')">영화</a></p>
 
-            <p><a href="#" onclick="changeFrameSrc('game/game_cart.asp')">장바구니</a></p>
+            <p><a href="#" class="text-decoration-none text-success fw-bold" onclick="changeFrameSrc('game/game_cart.asp')">장바구니</a></p>
 
             <% if session("id") <> "admin" then %>
-            <p><a href="#" onclick="changeFrameSrc('admin/admin_login.asp')">관리자 로그인</a></p>
+            <p><a href="#" class="text-decoration-none text-danger fw-bold" onclick="changeFrameSrc('admin/admin_login.asp')">관리자 로그인</a></p>
             <% else %>
-            <p><a href="#" onclick="changeFrameSrc('admin/admin_main.asp')">관리자 메뉴</a></p>
+            <p><a href="#" class="text-decoration-none text-danger fw-bold" onclick="changeFrameSrc('admin/admin_main.asp')">관리자 메뉴</a></p>
             <% end if %>
         </div>
         <iframe id="my_frame" src="game/main_right.asp" class="ms-5" style="width: 90%;">
