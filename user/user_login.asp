@@ -3,6 +3,12 @@ response.codepage = 949
 response.charset = "EUC-KR"
 %>
 
+<% 
+if Session("id") <> "" then
+Response.Write("<script>alert('이미 로그인 되어있습니다.');history.back();</script>")
+end if
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
