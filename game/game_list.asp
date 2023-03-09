@@ -64,7 +64,7 @@ rs.Open sql, db, 1
     <% else %>
     <form method="GET">
         <div class="position-relative">
-            <select class="form-select position-absolute end-0 w-25" name="g_filter" aria-label="Default select example" onchange="this.form.submit()">
+            <select class="form-select position-absolute end-0 w-25 me-3" name="g_filter" aria-label="Default select example" onchange="this.form.submit()">
                 <option id="filter_1" value="1" <% If g_filter = "1" Then Response.Write("selected") End If %>>등록일 내림차순</option>
                 <option id="filter_2" value="2" <% If g_filter = "2" Then Response.Write("selected") End If %>>등록일 오름차순</option>
                 <option id="filter_3" value="3" <% If g_filter = "3" Then Response.Write("selected") End If %>>높은 가격순</option>
