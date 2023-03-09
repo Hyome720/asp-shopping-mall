@@ -61,7 +61,7 @@ response.charset = "EUC-KR"
             <p><a href="#" class="text-decoration-none text-danger fw-bold" onclick="changeFrameSrc('admin/admin_main.asp')">관리자 메뉴</a></p>
             <% end if %>
         </div>
-        <iframe id="my_frame" src="game/main_right.asp" class="ms-5" style="width: 90%;">
+        <iframe id="my_frame" src="game/game_list.asp" class="ms-5" style="width: 90%;">
             
         </iframe>
     </container>
